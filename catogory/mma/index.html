@@ -402,6 +402,13 @@ Press Ctrl + D to bookmark this page and quickly access the latest SportSurge do
  </div>
        </div>
 
- 
+ <script>
+  if (window.location.pathname.endsWith('/')) {
+    const newPath = window.location.pathname.slice(0, -1);
+    const newUrl = window.location.origin + newPath + window.location.search + window.location.hash;
+    window.history.replaceState({}, '', newUrl);
+  }
+</script>
+
 </body>
 </html>
